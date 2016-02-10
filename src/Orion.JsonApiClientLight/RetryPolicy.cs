@@ -27,7 +27,7 @@ namespace Orion.JsonApiClientLight {
 		}
 
 		public bool IsDisabled() {
-			return Equals(NoRetry);
+			return RetryCount <= 0;
 		}
 
 		#region Equality members
