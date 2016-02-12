@@ -44,7 +44,7 @@ The cancellation token can be use to cancel a request or stopped current retries
 ```
 
 ### Retry policy
-The default number for retry is 3 with a delay of 2 second * tentive number².
+The default number for retry is 3 with a delay of 2 seconds * retry number².
 The retry's number and delay can be change by:
 
 ```c#
