@@ -1,21 +1,21 @@
 # JsonApiClientLight
-A simple asynchronous library for requesting Api in Json. Compatible with the most of project type (Dnx, .Net, ...)
+A simple asynchronous library for requesting Api in Json. Compatible with most of project types (Dnx, .Net, ...)
 
 ## Feature
 
 * Support standard http method GET, POST, PUT, DELETE with playload or url parameters in Json.
 * Uploading file
 * Configurable retry policy
-* Automatic deserialize json with [Newtonsoft.Json]
+* Automaticly deserialize json with [Newtonsoft.Json]
 * All overridable methods for a full customisation
 
 ## Installation
-Comming soon nuget package
+Coming soon nugget package
 
 ## Usage
 
-Create a JsonApiClientLight class and start using methods. There are two type of methods, the standard who return HttpResponseMessage and generics methods for automatic deserialization.
-For all method you need to fill url of target and some other parameters. The GET and DELETE method the parameters are turn into [query string] while POST and PUT serialize object in content of request.
+Create a JsonApiClientLight class and start using methods. There are two types of method, the standards which return HttpResponseMessage and the generics ones for automatic deserialization.
+For all methods you need to fill url of target and some other parameters. The GET and DELETE method the parameters are turn into [query string] while POST and PUT serialize object in content of request.
 
 The cancellation token can be use to cancel a request or stopped current retries.
 
