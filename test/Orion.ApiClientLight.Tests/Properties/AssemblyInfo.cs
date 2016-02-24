@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Orion.JsonApiClientLight.Tests")]
+[assembly: AssemblyTitle("Orion.ApiClientLight.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Orion.JsonApiClientLight.Tests")]
+[assembly: AssemblyProduct("Orion.ApiClientLight.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,4 +20,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("67a2ad8d-50c8-46a3-8c02-7a19a3210705")]
+[assembly: Guid("4c3095d3-2ab2-4bd5-8d96-d5da2305bace")]

@@ -1,6 +1,6 @@
 using System;
 
-namespace Orion.JsonApiClientLight {
+namespace Orion.ApiClientLight {
 	public class RetryPolicy {
 		public static readonly RetryPolicy NoRetry = new RetryPolicy { RetryCount = 0 };
 

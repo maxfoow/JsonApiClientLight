@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Orion.ApiLight.Exceptions {
+namespace Orion.ApiClientLight.Exceptions {
 	public class ApilJsonException : Exception {
 		public string Json { get; }
 

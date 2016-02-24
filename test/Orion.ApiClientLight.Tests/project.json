@@ -25,7 +25,7 @@
         }
     },
     "dependencies": {
-        "Orion.JsonApiClientLight": "",
+        "Orion.ApiClientLight": "",
         "xunit": "2.2.0-beta1-*",
         "xunit.runner.dnx": "2.1.0-rc1-*",
         "xunit.runner.reporters": "2.1.0-rc1-*"

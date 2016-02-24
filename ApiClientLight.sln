@@ -12,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orion.JsonApiClientLight", "src\Orion.JsonApiClientLight\Orion.JsonApiClientLight.xproj", "{3C647928-C851-402C-A876-3935DB160CE5}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orion.ApiClientLight", "src\Orion.ApiClientLight\Orion.ApiClientLight.xproj", "{3C647928-C851-402C-A876-3935DB160CE5}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orion.JsonApiClientLight.Tests", "test\Orion.JsonApiClientLight.Tests\Orion.JsonApiClientLight.Tests.xproj", "{67A2AD8D-50C8-46A3-8C02-7A19A3210705}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orion.ApiClientLight.Tests", "test\Orion.ApiClientLight.Tests\Orion.ApiClientLight.Tests.xproj", "{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,16 +26,16 @@ Global
 		{3C647928-C851-402C-A876-3935DB160CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C647928-C851-402C-A876-3935DB160CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C647928-C851-402C-A876-3935DB160CE5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67A2AD8D-50C8-46A3-8C02-7A19A3210705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67A2AD8D-50C8-46A3-8C02-7A19A3210705}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67A2AD8D-50C8-46A3-8C02-7A19A3210705}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67A2AD8D-50C8-46A3-8C02-7A19A3210705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3C647928-C851-402C-A876-3935DB160CE5} = {3CA8FE33-1C9B-40A8-8C35-591BAF7F3D4F}
-		{67A2AD8D-50C8-46A3-8C02-7A19A3210705} = {B7281730-2157-428B-810F-9E2DE693542F}
+		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE} = {B7281730-2157-428B-810F-9E2DE693542F}
 	EndGlobalSection
 EndGlobal
