@@ -10,7 +10,7 @@ A simple asynchronous library for requesting Api in Json. Compatible with most o
 * All overridable methods for a full customisation
 
 ## Installation
-Coming soon nugget package
+Coming soon nuget package
 
 ## Usage
 
@@ -18,29 +18,43 @@ Create a JsonApiClientLight class and start using methods. There are two types o
 For all methods you need to fill url of target and some other parameters. The GET and DELETE method the parameters are turn into [query string] while POST and PUT serialize object in content of request.
 
 The cancellation token can be use to cancel a request or stopped current retries.
+Request methods return an HttpResponse. See HttpResponse usage for more.
 
 ### Standard
 
 ```c#
-  Task<HttpResponseMessage> GetAsync(string url, object parameters, CancellationToken? token = null);
-  Task<HttpResponseMessage> PostAsync(string url, object data, CancellationToken? token = null);
-  Task<HttpResponseMessage> PutAsync(string url, object data, CancellationToken? token = null);
-  Task<HttpResponseMessage> DeleteAsync(string url, object parameters, CancellationToken? token = null);
+  Task<HttpResponse> GetAsync(string url, object parameters, CancellationToken? token = null);
+  Task<HttpResponse> PostAsync(string url, object data, CancellationToken? token = null);
+  Task<HttpResponse> PutAsync(string url, object data, CancellationToken? token = null);
+  Task<HttpResponse> DeleteAsync(string url, object parameters, CancellationToken? token = null);
 ```
-
 ### Auto deserialization
 
 ```c#
-  Task<T> GetAsync<T>(string url, object parameters, CancellationToken? token = null);
-  Task<T> PostAsync<T>(string url, object data, CancellationToken? token = null);
-  Task<T> PutAsync<T>(string url, object data, CancellationToken? token = null);
-  Task<T> DeleteAsync<T>(string url, object parameters, CancellationToken? token = null);
+  Task<HttpResponse<T>> GetAsync<T>(string url, object parameters, CancellationToken? token = null);
+  Task<HttpResponse<T>> PostAsync<T>(string url, object data, CancellationToken? token = null);
+  Task<HttpResponse<T>> PutAsync<T>(string url, object data, CancellationToken? token = null);
+  Task<HttpResponse<T>> DeleteAsync<T>(string url, object parameters, CancellationToken? token = null);
 ```
 
 ### Upload file
 ```c#
-	Task<HttpResponseMessage> UploadFile(string url, Stream file, string filename = null, HttpMethod httpMethod = null, CancellationToken? token = null);
-	Task<T> UploadFile<T>(string url, Stream file, string filename = null, HttpMethod httpMethod = null, CancellationToken? token = null);
+	Task<HttpResponse> UploadFile(string url, Stream file, string filename = null, HttpMethod httpMethod = null, CancellationToken? token = null);
+	Task<HttpResponse<T>> UploadFile<T>(string url, Stream file, string filename = null, HttpMethod httpMethod = null, CancellationToken? token = null);
+```
+
+### HttpResponse
+Non typed methods return a non generic HttpResponse.
+```c#
+	var response = await _jsonApiClientLight.GetAsync("exemple.com");
+	HttpContent content = response.Response;
+```
+
+Typed methods return a generic HttpReponse with content already deserialize.
+
+```c#
+	var response = await _jsonApiClientLight.GetAsync<TModel>("exemple.com");
+	TModel content = response.Response;
 ```
 
 ### Retry policy
