@@ -12,6 +12,7 @@ namespace Orion.ApiClientLight {
 		public int RetryCount { get; }
 		public HttpResponseMessage HttpResponseMessage { get; }
 
+		public HttpContent Response => HttpResponseMessage.Content;
 		public HttpResponse(HttpResponseMessage httpResponseMessage, int retryCount, List<Exception> exceptions) {
 			_exceptions = exceptions;
 			RetryCount = retryCount;
@@ -54,7 +55,7 @@ namespace Orion.ApiClientLight {
 	}
 
 	public class HttpResponse<TResponse> : HttpResponse {
-		public TResponse Response { get; private set; }
+		public new TResponse Response { get; private set; }
 
 		public HttpResponse(HttpResponseMessage httpResponseMessage, int retryCount, List<Exception> exceptions)
 			: base(httpResponseMessage, retryCount, exceptions) {

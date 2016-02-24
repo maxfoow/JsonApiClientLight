@@ -16,7 +16,7 @@ namespace Orion.ApiClientLight {
 		/// <param name="parameters">query string parameters</param>
 		/// <param name="token">cancellation token</param>
 		/// <returns>HttpResponseMessage of request</returns>
-		Task<HttpResponse> GetAsync(string url, object parameters, CancellationToken? token = null);
+		Task<HttpResponse> GetAsync(string url, object parameters = null, CancellationToken? token = null);
 
 		/// <summary>
 		/// Make HTTP POST request asynchronous
@@ -43,7 +43,7 @@ namespace Orion.ApiClientLight {
 		/// <param name="parameters">query string parameters</param>
 		/// <param name="token">cancellation token</param>
 		/// <returns>HttpResponseMessage of request</returns>
-		Task<HttpResponse> DeleteAsync(string url, object parameters, CancellationToken? token = null);
+		Task<HttpResponse> DeleteAsync(string url, object parameters = null, CancellationToken? token = null);
 
 		/// <summary>
 		/// Make HTTP GET request asynchronous with automatic deserialization of response.

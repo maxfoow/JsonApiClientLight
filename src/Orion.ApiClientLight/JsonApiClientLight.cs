@@ -81,7 +81,7 @@ namespace Orion.ApiClientLight {
 		#endregion
 
 		#region Requests
-		public virtual async Task<HttpResponse> GetAsync(string url, object parameters, CancellationToken? token = null) {
+		public virtual async Task<HttpResponse> GetAsync(string url, object parameters = null, CancellationToken? token = null) {
 			return await RequestAsync(url, HttpMethod.Get, parameters, token ?? CancellationToken.None);
 		}
 
@@ -91,12 +91,12 @@ namespace Orion.ApiClientLight {
 		public virtual async Task<HttpResponse> PutAsync(string url, object data, CancellationToken? token = null) {
 			return await RequestAsync(url, HttpMethod.Put, data, token ?? CancellationToken.None);
 		}
-		public virtual async Task<HttpResponse> DeleteAsync(string url, object data, CancellationToken? token = null) {
-			return await RequestAsync(url, HttpMethod.Delete, data, token ?? CancellationToken.None);
+		public virtual async Task<HttpResponse> DeleteAsync(string url, object parameters = null, CancellationToken? token = null) {
+			return await RequestAsync(url, HttpMethod.Delete, parameters, token ?? CancellationToken.None);
 		}
 
 		#region Typed
-		public virtual async Task<HttpResponse<T>> GetAsync<T>(string url, object parameters, CancellationToken? token = null) {
+		public virtual async Task<HttpResponse<T>> GetAsync<T>(string url, object parameters = null, CancellationToken? token = null) {
 			return await RequestAsync<T>(url, HttpMethod.Get, parameters, token ?? CancellationToken.None);
 		}
 		public virtual async Task<HttpResponse<T>> PostAsync<T>(string url, object data, CancellationToken? token = null) {
@@ -105,8 +105,8 @@ namespace Orion.ApiClientLight {
 		public virtual async Task<HttpResponse<T>> PutAsync<T>(string url, object data, CancellationToken? token = null) {
 			return await RequestAsync<T>(url, HttpMethod.Put, data, token ?? CancellationToken.None);
 		}
-		public virtual async Task<HttpResponse<T>> DeleteAsync<T>(string url, object data, CancellationToken? token = null) {
-			return await RequestAsync<T>(url, HttpMethod.Delete, data, token ?? CancellationToken.None);
+		public virtual async Task<HttpResponse<T>> DeleteAsync<T>(string url, object parameters = null, CancellationToken? token = null) {
+			return await RequestAsync<T>(url, HttpMethod.Delete, parameters, token ?? CancellationToken.None);
 		}
 		#endregion
 
