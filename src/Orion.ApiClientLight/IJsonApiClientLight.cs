@@ -53,7 +53,7 @@ namespace Orion.ApiClientLight {
 		/// <param name="parameters">query string parameters</param>
 		/// <param name="token">cancellation token</param>
 		/// <returns>Instance of T filled with response content</returns>
-		Task<HttpResponse<T>> GetAsync<T>(string url, object parameters, CancellationToken? token = null);
+		Task<HttpResponse<T>> GetAsync<T>(string url, object parameters = null, CancellationToken? token = null);
 
 		/// <summary>
 		/// Make HTTP POST request asynchronous with automatic deserialization of response.
@@ -83,7 +83,7 @@ namespace Orion.ApiClientLight {
 		/// <param name="parameters">query string parameters</param>
 		/// <param name="token">cancellation token</param>
 		/// <returns>Instance of T filled with response content</returns>
-		Task<HttpResponse<T>> DeleteAsync<T>(string url, object parameters, CancellationToken? token = null);
+		Task<HttpResponse<T>> DeleteAsync<T>(string url, object parameters = null, CancellationToken? token = null);
 
 		/// <summary>
 		/// Make HTTP Request, default POST, for upload a file.

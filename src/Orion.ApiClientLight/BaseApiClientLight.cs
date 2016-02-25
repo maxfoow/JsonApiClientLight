@@ -7,6 +7,8 @@ using Orion.ApiClientLight.Exceptions;
 
 namespace Orion.ApiClientLight {
 	public abstract class BaseApiClientLight {
+		public const string HeaderContentType = "Content-Type";
+		public const string HeaderContentTypeJson = "application/json";
 		private readonly HttpClient _httpClient;
 		private RetryPolicy _retryPolicy;
 
@@ -23,7 +25,7 @@ namespace Orion.ApiClientLight {
 
 		#region Constructors
 		protected BaseApiClientLight() {
-			Headers = new Dictionary<string, string>();
+			Headers = new Dictionary<string, string> { { HeaderContentType, HeaderContentTypeJson } };
 		}
 
 		protected BaseApiClientLight(HttpClient httpClient) {

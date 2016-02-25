@@ -39,6 +39,8 @@ namespace Orion.ApiClientLight {
 
 		#region Parameters Management
 		protected virtual string CreateUrlParameters(object data) {
+			if (data == null)
+				return string.Empty;
 			var parameters = new Dictionary<string, string>();
 			var type = data.GetType();
 			foreach (var propertyInfo in type.GetTypeInfo().DeclaredProperties) {
