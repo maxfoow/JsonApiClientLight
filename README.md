@@ -44,6 +44,8 @@ Request methods return an HttpResponse. See HttpResponse usage for more.
 ```
 
 ### HttpResponse
+HttpResponse provide information on request. For exemple, number of retry, exceptions during this retry, ...(See class for more).
+
 Non typed methods return a non generic HttpResponse.
 ```c#
 	var response = await _jsonApiClientLight.GetAsync("exemple.com");
@@ -56,6 +58,7 @@ Typed methods return a generic HttpReponse with content already deserialize.
 	var response = await _jsonApiClientLight.GetAsync<TModel>("exemple.com");
 	TModel content = response.Response;
 ```
+
 
 ### Retry policy
 The default number for retry is 3 with a delay of 2 seconds * retry number².
@@ -76,11 +79,26 @@ public override TimeSpan Next(int currentRetry) {
 
 ### Headers
 
-For adding headers to every request
+For adding headers to every request. There is one default Header for Content-Type set to 'application/json'.
 ```c#
 var apiClient = new JsonApiClientLight();
 apiClient.Headers.Add("Authorization", "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
+### Error management
+If exceeded the number retries, a exception will be raised.
+
+```c#
+try {
+	var apiClient = new JsonApiClientLight();
+	var response = await _jsonApiClientLight.GetAsync<TModel>("exemple.com");
+} catch (ApilRequestException e) {
+	// TODO manage error here
+} catch (ApilJsonException e) {
+	// TODO manage json deserialize exception here
+}
+```
+
    [Newtonsoft.Json]: <http://www.newtonsoft.com/json>
    [query string]: <https://en.wikipedia.org/wiki/Query_string>  
+ 
