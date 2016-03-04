@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -53,6 +54,9 @@ namespace Orion.ApiClientLight {
 					};
 					var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, token);
 					content?.Dispose();
+					if (response.StatusCode != HttpStatusCode.Accepted) {
+						throw new ErrorRequestException(new HttpResponse(response, actualRetryCount, exceptions));
+					}
 					return new HttpResponse(response, actualRetryCount, exceptions);
 				}
 				catch (TaskCanceledException) {
@@ -63,7 +67,7 @@ namespace Orion.ApiClientLight {
 				}
 				++actualRetryCount;
 			} while (actualRetryCount <= RetryPolicy.RetryCount);
-			throw new ApilRequestException("Error during the request. See the inner exception for details.", exceptions);
+			throw new RequestException("Error during the request. See the inner exception for details.", exceptions);
 		}
 
 		protected virtual HttpClient CreateHttpClient() {

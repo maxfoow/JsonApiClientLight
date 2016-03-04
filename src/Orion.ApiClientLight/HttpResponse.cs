@@ -20,17 +20,17 @@ namespace Orion.ApiClientLight {
 		}
 
 		public async Task<TResponse> FromJsonAsync<TResponse>() {
-			try {
-				HttpResponseMessage.EnsureSuccessStatusCode();
-			}
-			catch (Exception e) {
-				var content = await HttpResponseMessage.Content.ReadAsStringAsync();
-				HttpResponseMessage.Content?.Dispose();
-				throw new ApilRequestException("Error during the request. See the inner exception for details.",
-					e is ApilRequestException ? e.InnerException : e,
-					HttpResponseMessage.StatusCode,
-					content);
-			}
+			//try {
+			//	HttpResponseMessage.EnsureSuccessStatusCode();
+			//}
+			//catch (Exception e) {
+			//	var content = await HttpResponseMessage.Content.ReadAsStringAsync();
+			//	HttpResponseMessage.Content?.Dispose();
+			//	throw new RequestException("Error during the request. See the inner exception for details.",
+			//		e is RequestException ? e.InnerException : e,
+			//		HttpResponseMessage.StatusCode,
+			//		content);
+			//}
 			using (var stream = await HttpResponseMessage.Content.ReadAsStreamAsync()) {
 				using (var sr = new StreamReader(stream)) {
 					using (var reader = new JsonTextReader(sr)) {
@@ -39,7 +39,7 @@ namespace Orion.ApiClientLight {
 							return serializer.Deserialize<TResponse>(reader);
 						}
 						catch (Exception ex) {
-							throw new ApilJsonException($"Error while processing json deserialization on type {typeof(TResponse).FullName}. See the inner exception for details.", ex,
+							throw new DeserializeException($"Error while processing json deserialization on type {typeof(TResponse).FullName}. See the inner exception for details.", ex,
 								reader.ReadAsString());
 						}
 					}
@@ -47,7 +47,7 @@ namespace Orion.ApiClientLight {
 			}
 		}
 
-		internal async Task<HttpResponse<TResponse>> ToAsync<TResponse>() {
+		public async Task<HttpResponse<TResponse>> ToAsync<TResponse>() {
 			var response = new HttpResponse<TResponse>(HttpResponseMessage, RetryCount, _exceptions);
 			await response.InitializeAsync();
 			return response;

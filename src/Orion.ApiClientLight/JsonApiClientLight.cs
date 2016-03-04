@@ -65,6 +65,9 @@ namespace Orion.ApiClientLight {
 			if (data is string) {
 				return new StringContent((string) data);
 			}
+			else if (data is HttpContent) {
+				return (HttpContent) data;
+			}
 			else if (data is FileInformationContent) {
 				var fileInformation = (FileInformationContent) data;
 				var multipartContent = new MultipartFormDataContent("Upload----" + DateTime.Now.ToString(CultureInfo.InvariantCulture));
