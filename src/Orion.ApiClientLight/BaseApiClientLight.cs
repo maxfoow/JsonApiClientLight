@@ -27,12 +27,14 @@ namespace Orion.ApiClientLight {
 		#region Constructors
 		protected BaseApiClientLight() {
 			Headers = new Dictionary<string, string> { { HeaderContentType, HeaderContentTypeJson } };
+		    RetryPolicy = null;
 		}
 
 		protected BaseApiClientLight(HttpClient httpClient) {
 			_httpClient = httpClient;
 			Headers = new Dictionary<string, string>();
-		}
+            RetryPolicy = null;
+        }
 
 		#endregion
 
@@ -43,25 +45,28 @@ namespace Orion.ApiClientLight {
 			do {
 				if (actualRetryCount != 0)
 					await Task.Delay(RetryPolicy.Next(actualRetryCount), token);
-				try {
-					token.ThrowIfCancellationRequested();
+			    try {
+			        token.ThrowIfCancellationRequested();
 
-					var client = _httpClient ?? CreateHttpClient();
-					var requestMessage = new HttpRequestMessage {
-						Method = httpMethod,
-						RequestUri = new Uri(url),
-						Content = content
-					};
-					var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, token);
-					content?.Dispose();
-					if (response.StatusCode != HttpStatusCode.Accepted) {
-						throw new ErrorRequestException(new HttpResponse(response, actualRetryCount, exceptions));
-					}
-					return new HttpResponse(response, actualRetryCount, exceptions);
-				}
-				catch (TaskCanceledException) {
-					throw;
-				}
+			        var client = _httpClient ?? CreateHttpClient();
+			        var requestMessage = new HttpRequestMessage {
+			                                                        Method = httpMethod,
+			                                                        RequestUri = new Uri(url),
+			                                                        Content = content
+			                                                    };
+			        var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, token);
+			        content?.Dispose();
+			        if (response.StatusCode != HttpStatusCode.OK) {
+			            throw new ErrorRequestException(new HttpResponse(response, actualRetryCount, exceptions));
+			        }
+			        return new HttpResponse(response, actualRetryCount, exceptions);
+			    }
+			    catch (TaskCanceledException) {
+			        throw;
+			    }
+			    catch (ErrorRequestException) {
+			        throw;
+			    }
 				catch (Exception e) {
 					exceptions.Add(e);
 				}
