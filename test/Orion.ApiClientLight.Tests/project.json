@@ -13,19 +13,18 @@
     "commands": {
         "test": "xunit.runner.dnx"
     },
+    "compile": [
+        "../Orion.ApiClientLight-PCL.Tests/**/*.cs"
+    ],
+    "exclude": [
+        "../Orion.ApiClientLight-PCL.Tests/Properties/AssemblyInfo.cs"
+    ],
     "frameworks": {
-        "dnx46": { },
-        "dnxcore50": {
-            "dependencies": {
-                "System.Reflection": "4.1.0-beta-*",
-                "System.Reflection.Extensions": "4.0.1-beta-*",
-                "System.Reflection.TypeExtensions": "4.0.1-beta-*",
-                "System.Runtime": "4.0.21-beta-*"
-            }
-        }
+        "dnx46": { }
     },
     "dependencies": {
         "Orion.ApiClientLight": "",
+        "Moq": "4.2.1510.2205",
         "xunit": "2.2.0-beta1-*",
         "xunit.runner.dnx": "2.1.0-rc1-*",
         "xunit.runner.reporters": "2.1.0-rc1-*"

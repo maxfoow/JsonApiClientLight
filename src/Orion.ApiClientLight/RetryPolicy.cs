@@ -18,7 +18,7 @@ namespace Orion.ApiClientLight {
 		public TimeSpan Delay { get; set; }
 
 		public virtual TimeSpan Next(int currentRetry) {
-			return TimeSpan.FromSeconds(Delay.TotalSeconds * Math.Pow(currentRetry, 2));
+			return TimeSpan.FromSeconds(Delay.TotalSeconds * currentRetry * 2);
 		}
 
 		public void Disable() {

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Orion.ApiClientLight-PCL</id>
+    <version>1.0.0-beta18</version>
+    <title>ApiClientLight</title>
+    <authors>maxfoow</authors>
+    <owners>maxfoow</owners>
+    <licenseUrl>https://github.com/maxfoow/JsonApiClientLight/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/maxfoow/JsonApiClientLight</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple library for requesting Api in Json.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Http Json	HttpClient ApiClient</tags>
+  </metadata>
+</package>

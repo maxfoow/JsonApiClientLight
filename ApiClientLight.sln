@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3CA8FE33-1C9B-40A8-8C35-591BAF7F3D4F}"
 EndProject
@@ -10,13 +10,24 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{008AC081-B297-45A6-A85C-C2E93BD9D7F8}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		src\Orion.ApiClientLight-PCL\Orion.ApiClientLight-PCL.nuspec = src\Orion.ApiClientLight-PCL\Orion.ApiClientLight-PCL.nuspec
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orion.ApiClientLight", "src\Orion.ApiClientLight\Orion.ApiClientLight.xproj", "{3C647928-C851-402C-A876-3935DB160CE5}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Orion.ApiClientLight.Tests", "test\Orion.ApiClientLight.Tests\Orion.ApiClientLight.Tests.xproj", "{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.ApiClientLight-PCL", "src\Orion.ApiClientLight-PCL\Orion.ApiClientLight-PCL.csproj", "{EC300DB2-9DD1-4B71-8B33-597A04DF83D4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Orion.ApiClientLight.Shared", "src\Orion.ApiClientLight\Orion.ApiClientLight.Shared.shproj", "{C28644C1-4393-40B3-846D-6F8E20F3699B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.ApiClientLight-PCL.Tests", "test\Orion.ApiClientLight-PCL.Tests\Orion.ApiClientLight-PCL.Tests.csproj", "{1C0ACFCA-2163-4CD9-9DC9-972E0335D249}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Orion.ApiClientLight\Orion.ApiClientLight.Shared.projitems*{c28644c1-4393-40b3-846d-6f8e20f3699b}*SharedItemsImports = 13
+		src\Orion.ApiClientLight\Orion.ApiClientLight.Shared.projitems*{ec300db2-9dd1-4b71-8b33-597a04df83d4}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -30,6 +41,14 @@ Global
 		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC300DB2-9DD1-4B71-8B33-597A04DF83D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC300DB2-9DD1-4B71-8B33-597A04DF83D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC300DB2-9DD1-4B71-8B33-597A04DF83D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC300DB2-9DD1-4B71-8B33-597A04DF83D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C0ACFCA-2163-4CD9-9DC9-972E0335D249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C0ACFCA-2163-4CD9-9DC9-972E0335D249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C0ACFCA-2163-4CD9-9DC9-972E0335D249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C0ACFCA-2163-4CD9-9DC9-972E0335D249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,5 +56,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3C647928-C851-402C-A876-3935DB160CE5} = {3CA8FE33-1C9B-40A8-8C35-591BAF7F3D4F}
 		{4C3095D3-2AB2-4BD5-8D96-D5DA2305BACE} = {B7281730-2157-428B-810F-9E2DE693542F}
+		{EC300DB2-9DD1-4B71-8B33-597A04DF83D4} = {3CA8FE33-1C9B-40A8-8C35-591BAF7F3D4F}
+		{C28644C1-4393-40B3-846D-6F8E20F3699B} = {3CA8FE33-1C9B-40A8-8C35-591BAF7F3D4F}
+		{1C0ACFCA-2163-4CD9-9DC9-972E0335D249} = {B7281730-2157-428B-810F-9E2DE693542F}
 	EndGlobalSection
 EndGlobal

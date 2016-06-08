@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c28644c1-4393-40b3-846d-6f8e20f3699b</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Orion.ApiClientLight.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)HttpClientLight.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Contents\FileInformationContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\ApiClientLightException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\DeserializeException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\ErrorRequestException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\RequestException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HttpResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IHttpClientLight.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IJsonApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IJsonApiClientLight.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JsonApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JsonApiClientLight.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logger\ILogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RetryPolicy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Url.cs" />
+  </ItemGroup>
+</Project>

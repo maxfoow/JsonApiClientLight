@@ -1,7 +1,9 @@
 ﻿{
-    "version": "1.0.0-beta5",
+    "title": "ApiClientLight",
+    "version": "1.0.0-beta18",
     "description": "Simple library for requesting Api in Json.",
     "authors": [ "maxfoow" ],
+    "owners": [ "maxfoow" ],
     "tags": [ "Http", "Json", "HttpClient", "ApiClient" ],
     "projectUrl": "https://github.com/maxfoow/JsonApiClientLight",
     "licenseUrl": "https://github.com/maxfoow/JsonApiClientLight/blob/master/LICENSE",
@@ -9,37 +11,45 @@
         "type": "git",
         "url": "https://github.com/maxfoow/JsonApiClientLight"
     },
-
+    "exclude": [
+        "packages.config"
+    ],
     "frameworks": {
-        "net451": { },
-        "dotnet5.4": {
+        "net45": {
             "dependencies": {
-                "Microsoft.CSharp": "4.0.1-beta-*",
+                "System.Net.Http": "4.0.0",
+                "Newtonsoft.Json": "8.0.3"
+            }
+        },
+        "dotnet": {
+            "dependencies": {
+                "System.Net.Http": "4.0.0",
+                "Newtonsoft.Json": "8.0.3",
+                "Microsoft.CSharp": "4.0.0",
+                "System.Collections": "4.0.10",
+                "System.Runtime": "4.0.20",
+                "System.Reflection": "4.0.10"
+            }
+        },
+        "dnx45": {
+            "dependencies": {
+                "System.Net.Http": "4.0.0",
+                "Newtonsoft.Json": "8.0.3",
                 "System.Collections": "4.0.11-beta-*",
-                "System.Linq": "4.0.1-beta-*",
                 "System.Runtime": "4.0.21-beta-*",
-                "System.Runtime.Extensions": "4.0.11-beta-*",
-                "System.Threading": "4.0.11-beta-*",
                 "System.Reflection": "4.1.0-beta-*",
-                "System.Reflection.Extensions": "4.0.1-beta-*",
-                "System.Reflection.Primitives": "4.0.1-beta-*"
+                "System.Dynamic.Runtime": "4.0.11-beta-*"
             }
         },
         "dnxcore50": {
             "dependencies": {
+                "System.Net.Http": "4.0.0",
+                "Newtonsoft.Json": "8.0.3",
                 "System.Collections": "4.0.11-beta-*",
                 "System.Runtime": "4.0.21-beta-*",
                 "System.Reflection": "4.1.0-beta-*",
-                "System.Runtime.Extensions": "4.0.11-beta-*",
-                "System.Reflection.Extensions": "4.0.1-beta-*",
-                "System.Reflection.Primitives": "4.0.1-beta-*",
-                "System.Globalization": "4.0.11-beta-*",
                 "System.Dynamic.Runtime": "4.0.11-beta-*"
             }
         }
-    },
-    "dependencies": {
-        "System.Net.Http": "4.0.1-beta-*",
-        "Newtonsoft.Json": "8.0.2"
     }
 }
