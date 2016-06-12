@@ -1,11 +1,10 @@
-﻿using System.Threading.Tasks;
-using Moq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading;
-using Orion.ApiClientLight;
+using System.Threading.Tasks;
+using Moq;
 using Xunit;
 
-namespace Orion.ApiClientLight_PCL.Tests
+namespace Orion.ApiClientLight.Tests
 {
     public class JsonApiClientLightTests
     {

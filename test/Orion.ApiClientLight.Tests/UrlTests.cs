@@ -1,10 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Dynamic;
-using Orion.ApiClientLight;
 using Xunit;
 
-namespace Orion.ApiClientLight_PCL.Tests {
+namespace Orion.ApiClientLight.Tests {
     public class UrlTests {
         private const string StandardUrl = "http://exemple.com";
         private const string StringParameter = "?parameter=1";

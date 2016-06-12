@@ -1,55 +1,33 @@
 ﻿{
-    "title": "ApiClientLight",
-    "version": "1.0.0-beta18",
-    "description": "Simple library for requesting Api in Json.",
-    "authors": [ "maxfoow" ],
+  "title": "ApiClientLight",
+  "version": "1.0.1-beta2",
+  "description": "Simple library for requesting Api in Json.",
+  "authors": [ "maxfoow" ],
+  "packOptions": {
     "owners": [ "maxfoow" ],
     "tags": [ "Http", "Json", "HttpClient", "ApiClient" ],
     "projectUrl": "https://github.com/maxfoow/JsonApiClientLight",
     "licenseUrl": "https://github.com/maxfoow/JsonApiClientLight/blob/master/LICENSE",
     "repository": {
-        "type": "git",
-        "url": "https://github.com/maxfoow/JsonApiClientLight"
-    },
-    "exclude": [
-        "packages.config"
-    ],
-    "frameworks": {
-        "net45": {
-            "dependencies": {
-                "System.Net.Http": "4.0.0",
-                "Newtonsoft.Json": "8.0.3"
-            }
-        },
-        "dotnet": {
-            "dependencies": {
-                "System.Net.Http": "4.0.0",
-                "Newtonsoft.Json": "8.0.3",
-                "Microsoft.CSharp": "4.0.0",
-                "System.Collections": "4.0.10",
-                "System.Runtime": "4.0.20",
-                "System.Reflection": "4.0.10"
-            }
-        },
-        "dnx45": {
-            "dependencies": {
-                "System.Net.Http": "4.0.0",
-                "Newtonsoft.Json": "8.0.3",
-                "System.Collections": "4.0.11-beta-*",
-                "System.Runtime": "4.0.21-beta-*",
-                "System.Reflection": "4.1.0-beta-*",
-                "System.Dynamic.Runtime": "4.0.11-beta-*"
-            }
-        },
-        "dnxcore50": {
-            "dependencies": {
-                "System.Net.Http": "4.0.0",
-                "Newtonsoft.Json": "8.0.3",
-                "System.Collections": "4.0.11-beta-*",
-                "System.Runtime": "4.0.21-beta-*",
-                "System.Reflection": "4.1.0-beta-*",
-                "System.Dynamic.Runtime": "4.0.11-beta-*"
-            }
-        }
+      "type": "git",
+      "url": "https://github.com/maxfoow/JsonApiClientLight"
     }
+  },
+  "dependencies": {
+    "Newtonsoft.Json": "8.0.3"
+  },
+  "frameworks": {
+    "netstandard1.1": {
+      "imports": [ "dnxcore50", "dotnet5.6", "portable-net452+win81", "uap10" ],
+      "dependencies": {
+        "NETStandard.Library": "1.5.0-rc2-*",
+        "System.Dynamic.Runtime": "4.0.0"
+      }
+    }
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
+  }
 }
