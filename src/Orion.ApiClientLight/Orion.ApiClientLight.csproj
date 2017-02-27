@@ -4,7 +4,8 @@
     <AssemblyTitle>ApiClientLight</AssemblyTitle>
     <VersionPrefix>1.0.1-beta2</VersionPrefix>
     <Authors>maxfoow</Authors>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <TargetFrameworks>netstandard1.1;net46</TargetFrameworks>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <AssemblyName>Orion.ApiClientLight</AssemblyName>
     <PackageId>Orion.ApiClientLight</PackageId>
     <PackageTags>Http;Json;HttpClient;ApiClient</PackageTags>
@@ -20,13 +21,12 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.1.1-beta8</Version>
-    <AssemblyVersion>1.1.1.8</AssemblyVersion>
-    <FileVersion>1.1.1.8</FileVersion>
+    <Version>1.1.1-beta10</Version>
+    <AssemblyVersion>1.1.1.10</AssemblyVersion>
+    <FileVersion>1.1.1.10</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Orion.Extensions.Logging" Version="1.0.0-alpha5" />
-    <PackageReference Include="NETStandard.Library" Version="1.6.1" />
+    <PackageReference Include="Orion.Extensions.Logging" Version="1.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
